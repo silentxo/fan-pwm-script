@@ -2,7 +2,7 @@
 
 # The pwm methods are a bash implementation of https://github.com/Pioreactor/rpi_hardware_pwm
 # On the Raspberry Pi, add dtoverlay=pwm-2chan to /boot/config.txt. This defaults to GPIO_18 as the pin for PWM0 and GPIO_19 as the pin for PWM1.
-PWM_CHANNEL=1
+PWM_CHANNEL=0
 PWM_HERTZ=2000
 PWM_CHIP_PATH=/sys/class/pwm/pwmchip0
 AUTO_CLEANUP=1 # If 1 then pwm channel is unexported on script exit, if 0 then its only stopped
@@ -192,8 +192,8 @@ function __main__ {
       DUTY_CYCLE=50
     elif [ "$CUR_TEMP" -ge 40 ]; then
       DUTY_CYCLE=45
-    elif [ "$CUR_TEMP" -ge 25 ]; then
-      DUTY_CYCLE=40
+    elif [ "$CUR_TEMP" -ge 35 ]; then
+      DUTY_CYCLE=30
     fi
 
     if [ "$DUTY_CYCLE" != "$CURRENT_DUTY_CYCLE" ]; then
