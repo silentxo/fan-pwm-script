@@ -1,5 +1,5 @@
-sudo cp -f ./x735-fan.sh /usr/local/bin/
-sudo cp -f ./x735-fan.service /lib/systemd/system/
+sudo cp -f ./pwm-fan.sh /usr/local/bin/
+sudo cp -f ./pwm-fan.service /lib/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable x735-fan
-sudo systemctl start x735-fan
+sudo systemctl enable pwm-fan
+sudo systemctl start pwm-fan
